@@ -1,0 +1,635 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Task 7</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="109243c3-6c6b-4aa7-b7f2-9dd4d1c31b4d" class="page sans"><header><h1 class="page-title">Task 7</h1><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="c0b72bbd-c3fe-4e46-bed2-22baa1f4e9aa" class="">В этом задании необходимо разработать экран авторизации пользователя в приложение. Для реализации вам понадобятся знания об элементах пользовательского интерфейса: <code>UIView</code>, <code>CALayer</code>, <code>UIViewController</code>, <code>UITextField</code>, <code>UIButton</code>, <code>UILabel</code>, <code>UIAlertController</code>.</p><h1 id="0f2d1afa-1dc3-4155-8c26-378f8beb1c0e" class="">Application flow</h1><p id="ab78db9f-499d-41b7-9d53-d2dccb59d7b4" class="">При запуске приложения пользователь попадает на экран авторизации. На экране расположены интерактивные элементы:</p><ul id="c1ddb57b-926a-470d-ba6b-cd498717707b" class="bulleted-list"><li>поля ввода <code>login</code>, <code>password</code></li></ul><ul id="a146a376-46e3-42db-84ff-211bf906dd1a" class="bulleted-list"><li>кнопка  <code>authorize</code></li></ul><p id="da14afe9-12c0-4046-b90d-8b526edc19dd" class="">Также здесь расположен неинтерактивный текстовый элемент <code>text</code>.</p><figure id="a989c031-f5e9-4220-a62c-829fae5e7368" class="image"><a href="Task/Login_Base.svg"><img style="width:426px" src="Task/Login_Base.svg"/></a></figure><p id="009608b6-3934-4c00-a6dd-1a3369720260" class="">Для того, чтобы пользователь смог войти в приложение, ему необходимо ввести значения в поля <code>login</code> и <code>password</code>. </p><figure id="1e51472f-2ceb-42cc-9f88-15f8e36c7ffe" class="image"><a href="Task/Login_Input.svg"><img style="width:426px" src="Task/Login_Input.svg"/></a></figure><p id="3ba5760f-158c-4c90-b6a6-7fa4496c4a9f" class="">При нажатии на кнопку <code>authorize</code> значения в полях <code>login</code> и <code>password</code> проверяются на совпадение с имеющимися в системе значениями. Корректными являются следующие значения:</p><ul id="50a3d5b8-033f-487b-ba36-2d67b918d29e" class="bulleted-list"><li>для поля <code>login</code> - значение &quot;<em>username</em>&quot;</li></ul><ul id="7b37b63d-e302-4662-b008-f948c31720d2" class="bulleted-list"><li>для поля <code>password</code> - значение &quot;<em>password</em>&quot;</li></ul><p id="728b7352-d508-444a-8753-42c53f8a47e5" class="">В случае неудачной проверки - несовпадение значений в полях с имеющимися в системе - отображается следующее состояние. Изменяют своё отображение только те поля, в которых оказалось некорректное значение. В случае, если в одном поле оказалось корректное значение, а в другом - некорректное, отображение меняет только поле с некорректным значением.</p><p id="ff382995-66de-47ef-b621-bf32b9fb1c2f" class="">При возобновлении ввода в поле с некорректным значением оно возвращает своё отображение к базовому.</p><figure id="b25bf73b-c60e-4cb0-ae08-8476795afbde" class="image"><a href="Task/Login_Input_Error.svg"><img style="width:426px" src="Task/Login_Input_Error.svg"/></a></figure><p id="910a4995-cc0e-49ba-8ed5-c292193b5ed8" class="">В случае удачной проверки - совпадение значений в обоих полях с имеющимися в системе - экран переходит в следующее состояние. Элементы управления <code>login</code>, <code>password</code> и <code>authorize</code> изменяют состояние на неактивное. На экране появляется поле <code>secure</code>, которое имеет активное состояние. Поле <code>secure</code> содержит три кнопки - <code>1</code>, <code>2</code>, <code>3</code> - и строку текста <code>result</code>. </p><figure id="67d5875f-e0c7-42d3-ba8b-ad42fee98b8e" class="image"><a href="Task/Login_Success_-__Secure.svg"><img style="width:432px" src="Task/Login_Success_-__Secure.svg"/></a></figure><p id="748d7217-8a9a-4958-bb65-a40e6f444533" class="">Пользователю нужно нажать кнопки <code>1</code>, <code>2</code> и  <code>3</code> в корректной последовательности, чтобы авторизоваться в приложении. Корректной последовательностью является следующая:</p><ul id="50541a21-e3d3-4f91-991a-d14c32ae2949" class="bulleted-list"><li><code>1</code> <code>3</code> <code>2</code></li></ul><p id="e2aa58c4-6ac0-49c4-b066-45079fbbbbf4" class="">Вводимая пользователем последовательность отображается в элементе</p><figure id="eee5f729-8208-459d-a784-32ea28d4913c" class="image"><a href="Task/Login_Success_-__Secure_Input.svg"><img style="width:426px" src="Task/Login_Success_-__Secure_Input.svg"/></a></figure><p id="0b6449a2-3d95-4630-b9e5-6a41de5c81a6" class="">В случае, если пользователю ввёл некорректную последовательность, в элементе <code>secure</code> отображается индикация состояния <code>error</code>. Значение элемента <code>result</code> возвращается к исходному. </p><p id="c3e5924f-3328-4f65-98cc-5b09eb3128de" class="">Предел количества элементв в вводимой последовательности равен 3. Состояние <code>error</code> соответствует случаю, когда пользователь ввёл три значения последовательности и результат не совпал с корректным, записанным в системе.</p><figure id="cf01d44f-c15e-4705-8ca0-b7f4c21a6188" class="image"><a href="Task/Login_Success_-__Secure_Input-1.svg"><img style="width:426px" src="Task/Login_Success_-__Secure_Input-1.svg"/></a></figure><p id="c60c0875-8f64-4a84-bd41-9ba041796376" class="">Если пользователь начинает вводить последовательность, когда элемент <code>secure</code> находится в состоянии <code>error</code>, элемент <code>secure</code> переходит в состояние <code>ready</code>. </p><p id="3513ed49-3042-468c-b883-1755a93af1a6" class="">Если пользователь ввёл корректную последовательность, элемент <code>secure</code> переходит в состояние <code>success</code>. На экране отображается модальное окно с заголовком &quot;<em>Welcome</em>&quot; и сообщением &quot;<em>You are successfuly authorized!</em>&quot;. Интерактивная кнопка имеет заголовок &quot;<em>Refresh</em>&quot;. </p><p id="bea29c36-f285-4830-8bf7-f9a33efed3e0" class="">При нажатии на интерактивную кнопку:</p><ul id="4f57deb9-7fb7-4c29-8056-51c10839eeca" class="bulleted-list"><li>модальное окно пропадает</li></ul><ul id="4ad84ad0-7902-47e9-ab06-cd0bd070c625" class="bulleted-list"><li>экран авторизации возвращается в базовое состояние</li></ul><figure id="63f8d633-0b51-4ca3-b514-d9ed88d3a468" class="image"><a href="Task/Login_Success_-__Secure_Success.png"><img style="width:426px" src="Task/Login_Success_-__Secure_Success.png"/></a></figure><hr id="b94367f7-23bc-47db-8667-fa82918d5566"/><h1 id="e4eab7c4-f2d6-499e-98b5-00e727383222" class="">Общие требования</h1><ul id="2ed7ab24-80bc-4e2a-ac9e-faec1f30b9d3" class="bulleted-list"><li>Приложение поддерживает только светлую тему</li></ul><ul id="f0dd4603-4c76-4a0b-8b4d-e4a012066ac2" class="bulleted-list"><li>Минимальная версия операционной системы: iOS 12</li></ul><ul id="099e2b70-30e8-40e9-a25d-28dff02b6672" class="bulleted-list"><li>Для реализации приложения необходимо использовать только Objective-C</li></ul><ul id="a0903030-7527-42d0-bcc1-24dab7306692" class="bulleted-list"><li>Для реализации пользовательского интерфейса можно:<ul id="f949b438-77cb-4f10-a18a-dfb6f333021d" class="bulleted-list"><li>использовать xib и storyboard</li></ul><ul id="97de700e-e6ee-4fa1-b8ec-41b3de73bc23" class="bulleted-list"><li>описывать элементы интерфейса в коде</li></ul></li></ul><h1 id="6a1d3aae-2bb1-4096-a19b-b5015b426098" class="">Иконка приложения</h1><figure id="9442361c-470f-49e5-bc0b-845b2bec8004"><div class="source"><a href="https://www.notion.so/c3d1e556b5e144bfa818cc4da9da0014">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c3d1e556-b5e1-44bf-a818-cc4da9da0014/Icons.zip</a></div><figcaption>Набор требуемых размеров иконки</figcaption></figure><figure id="08761fe1-e57a-4756-93f1-6667ff58cade" class="image"><a href="Task/iTunesArtwork-1024.png"><img style="width:240px" src="Task/iTunesArtwork-1024.png"/></a></figure><figure id="2f6f76dd-68ae-49ee-931a-541c1a741a14" class="image"><a href="Task/Untitled.png"><img style="width:1122px" src="Task/Untitled.png"/></a></figure><h1 id="f9f3ca6c-e6ec-478e-9f6f-dcab31bb65ad" class="">Цветовая схема приложения</h1><figure id="016bd328-6f7e-4cff-8d22-d310ea449e18" class="image"><a href="Task/Group_26.svg"><img style="width:875px" src="Task/Group_26.svg"/></a></figure><h1 id="7dfccdf5-744a-441d-8c43-9566588fce4c" class="">Элементы пользовательского интерфейса</h1><h2 id="95f97fb3-3e95-4ec6-a36e-c70180c04889" class="">Фон</h2><figure id="61b88876-cb1a-49ad-9bd2-8623e645abc2" class="image"><a href="Task/Atom_Mocks.svg"><img style="width:426px" src="Task/Atom_Mocks.svg"/></a></figure><hr id="e97f8119-4b96-4758-a95c-a1af51146146"/><h2 id="8f4bd419-aab4-4b3f-bd93-caa986f05c4a" class="">Логотип</h2><p id="ce8bb7b8-c200-40d3-86c0-cc6ecff507ac" class="">Текстовый элемент, содержит название приложения. Текст элемента: &quot;<em>RSSchool</em>&quot;</p><figure id="67b04405-ab21-4e13-ab8c-edaa724c7ac5" class="image"><a href="Task/Atom_Logo.svg"><img style="width:426px" src="Task/Atom_Logo.svg"/></a></figure><hr id="3e43e4a5-60f5-4059-b35f-9f011e8e98d0"/><h2 id="73059e9b-af1a-4fb8-8098-6093dd1f8637" class="">Текстовые поля</h2><p id="3df0deb2-cc23-4df8-8838-9d5ca86c9396" class="">Текстовые поля <code>login</code> и <code>password</code>. </p><p id="68271995-0c89-400c-93f0-f60813e98fa4" class="">Поле <code>login</code> позволяет вводить только символы латинского алфавита. Ввод предлагается с нижнего начертания.</p><p id="cf12890e-aaa5-41c5-8417-05d405c8d6e9" class="">Поле <code>password</code> предназначено для ввода пароля. Значение, вводимое в это поле, экранируется.</p><p id="4ea4a872-0aa3-4ae9-8de6-ab369aebc672" class="">Текстовое поле находится в одном из трёх состояний:</p><ul id="03f304e2-8b42-4a64-b9cd-1f7f1a1cdcb9" class="bulleted-list"><li><code>ready</code></li></ul><ul id="b7ea7284-e778-4e3f-8b13-e5187f03df10" class="bulleted-list"><li><code>error</code></li></ul><ul id="4c425ca4-f501-4854-ba61-70ea40b8edd6" class="bulleted-list"><li><code>success</code></li></ul><p id="37a16cde-40bf-4b95-9108-862ca0dca5be" class="">При нажатии на текстовое поле на экране появляется системная клавиатура. Необходимо реализовать возможности для её скрытия:</p><ul id="a4bd9155-ae2c-43db-80d5-13faf6aa9077" class="bulleted-list"><li>при нажатии на кнопку &quot;return&quot; на клавиатуре последняя пропадает с экрана</li></ul><ul id="265a38e0-33c0-4db2-a026-54a3f2c4c047" class="bulleted-list"><li>при нажатии на любое место экрана, кроме текстовых полей, клавиатура пропадает с экрана</li></ul><figure id="24f2c010-1da6-463f-979b-553c210d637e" class="image"><a href="Task/Atom_Text_Fields.svg"><img style="width:426px" src="Task/Atom_Text_Fields.svg"/></a><figcaption>Состояние <code>active</code>, поле активно</figcaption></figure><figure id="14bf40b4-e1ff-44fb-ae80-e8f46eca8f65" class="image"><a href="Task/Atom_Text_Fields_Error.svg"><img style="width:426px" src="Task/Atom_Text_Fields_Error.svg"/></a><figcaption>Состояние <code>error</code>, поле активно</figcaption></figure><figure id="ceb925b6-a6ab-4207-a73c-4bb0e772c0aa" class="image"><a href="Task/Atom_Text_Fields_Error%201.svg"><img style="width:426px" src="Task/Atom_Text_Fields_Error%201.svg"/></a><figcaption>Состояние <code>success</code>, поле неактивно</figcaption></figure><hr id="fdb150e1-5230-4108-9f32-87696b803dfb"/><h2 id="46dbde6e-43b6-4f96-932a-5f0a3dea64e5" class="">Кнопка авторизации</h2><p id="5137b5e1-6f97-4c0c-afbe-27eefd3d433b" class="">Кнопка авторизации позволяет пользователю проверить корректность введённых данных и продолжить процесс авторизации. </p><p id="0f048a5e-8fb5-4352-998d-326c352cca0e" class="">Для иконки пользователя используется элемент SF Symbols - <code>person</code> и <code>person.fill</code>.</p><p id="7107ce7a-5b4f-4cad-9d8b-91ececc29792" class="">Отображение кнопки может находиться в одном из трёх состояний:</p><ul id="617c34c9-6e08-4e62-abb5-bbb235bfd8ee" class="bulleted-list"><li><code>default</code></li></ul><ul id="4fc8db3a-6b61-4bbf-8715-82d62fc80ca4" class="bulleted-list"><li><code>highlighted</code></li></ul><ul id="403f1bf0-56b8-4e52-8336-82d608f35c8f" class="bulleted-list"><li><code>disabled</code></li></ul><p id="d5923f14-4240-42ed-aa67-748036aa4425" class=""><code>default</code> соответствует состоянию, в котором кнопка является интерактивной, но пользователь на неё не нажимает. </p><p id="a6f29d5b-eeec-4b71-8416-094df41ca8a2" class=""><code>highlighted</code> - состояние, когда пользователь нажал на кнопку. Фоновый цвет кнопки меняется. Когда пользователь убирает палец с кнопки, она переходит в состояние <code>default</code>. </p><p id="1836fee7-004f-4a16-80d6-b86b2c0cf397" class="">Состояние <code>disabled</code> соответствует тому, при котором кнопка является неинтерактивной. Любые взаимодействия пользователя с ней не приводят к изменениям в её отображении.</p><figure id="93cfd18e-cade-4e15-8da9-b506cf12f15c" class="image"><a href="Task/Atom_Authorization_Button_1.svg"><img style="width:426px" src="Task/Atom_Authorization_Button_1.svg"/></a><figcaption>Состояние <code>default</code>, кнопка активна</figcaption></figure><figure id="72126948-09f8-4b0a-8fb2-dce34587af90" class="image"><a href="Task/Atom_Authorization_Button_2.svg"><img style="width:426px" src="Task/Atom_Authorization_Button_2.svg"/></a><figcaption>Состояние <code>default</code>, кнопка активна</figcaption></figure><figure id="e6afff15-dba1-4e64-8cd4-ad9427944e6b" class="image"><a href="Task/Atom_Authorization_Button_3.svg"><img style="width:426px" src="Task/Atom_Authorization_Button_3.svg"/></a><figcaption>Состояние <code>default</code>, кнопка активна</figcaption></figure><figure id="fbbf9a39-3397-4dca-a208-058a2f45a318" class="image"><a href="Task/Atom_Authorization_Button_4.svg"><img style="width:426px" src="Task/Atom_Authorization_Button_4.svg"/></a><figcaption>Состояние <code>highlighted</code>, кнопка активна</figcaption></figure><figure id="4bd2173a-3026-43c3-8509-22730da3cd45" class="image"><a href="Task/Atom_Authorization_Button_5.svg"><img style="width:426px" src="Task/Atom_Authorization_Button_5.svg"/></a><figcaption>Состояние <code>disabled</code>, кнопка неактивна</figcaption></figure><hr id="374baeca-9531-4f52-a01e-d81da68230fa"/><h2 id="808ab25d-394a-4f4c-b3a3-41e244f108c6" class="">Поле дополнительной проверки</h2><p id="abea4bf8-562f-4502-9db7-04612080d026" class="">Поле <code>secure</code> содержит в себе три интерактивных элемента <code>1</code>, <code>2</code>, <code>3</code> и текстовый элемент <code>result</code>. Пользователь поочерёдно нажимает интерактивные элементы <code>1</code>, <code>2</code>, <code>3</code>, а в <code>result</code> отображается вводимая последовательность в виде чисел, соответствующих нажимаемым элементам.</p><p id="b39a3971-1699-4aa2-8910-8f968a2f2662" class="">Поле <code>secure</code> может находиться в одном из трёх состояний:</p><ul id="bfbf3a7e-ba59-4870-a22e-e549da564a3c" class="bulleted-list"><li><code>default</code></li></ul><ul id="a42e6ced-e4e0-4939-9f5a-1c3aa0ec712e" class="bulleted-list"><li><code>error</code></li></ul><ul id="a69c37b4-6b37-4b84-896e-4ebb804072d3" class="bulleted-list"><li><code>success</code></li></ul><p id="ea2d0824-42ac-47e4-93ab-9b3126cce3ab" class="">В состоянии <code>default</code> интерактивные элементы <code>1</code>, <code>2</code>, <code>3</code> активны, граница поля <code>secure</code> не отображается. </p><p id="8375d572-ac9b-44df-86ed-f183933422c4" class="">В состоянии <code>error</code> у поля <code>secure</code> отображается граница соответствующего цвета. Когда <code>secure</code> находится в состоянии <code>error</code> и пользователь начинает ввод последовательности, поле <code>secure</code> переходит в состояние <code>default</code>. </p><p id="8f76ea31-15b6-4c06-87d0-61d4f0a65873" class="">В состоянии <code>success</code> поле <code>secure</code> отображает границу соответствующего цвета. </p><figure id="79179662-2570-4bd8-87b7-aef2b8df36f0" class="image"><a href="Task/Atom_Secret_1.svg"><img style="width:426px" src="Task/Atom_Secret_1.svg"/></a><figcaption>Состояние <code>default</code></figcaption></figure><figure id="2ece4abe-68e5-4897-9be8-dd07086aee3c" class="image"><a href="Task/Atom_Secret_2.svg"><img style="width:426px" src="Task/Atom_Secret_2.svg"/></a></figure><figure id="89b60fb0-bdc8-4075-b3da-749976534d64" class="image"><a href="Task/Atom_Secret_6.svg"><img style="width:426px" src="Task/Atom_Secret_6.svg"/></a></figure><figure id="9dafaffa-cf54-40cf-99de-c3d3a7c2a4f1" class="image"><a href="Task/Atom_Secret_3.svg"><img style="width:426px" src="Task/Atom_Secret_3.svg"/></a></figure><figure id="3714cd28-f7e8-4175-9740-4a3027519b8d" class="image"><a href="Task/Atom_Secret_4.svg"><img style="width:432px" src="Task/Atom_Secret_4.svg"/></a><figcaption>pСостояние <code>success</code></figcaption></figure><figure id="53d8e40d-e6da-486a-9eb0-7812bed5d1fd" class="image"><a href="Task/Atom_Secret_5.svg"><img style="width:426px" src="Task/Atom_Secret_5.svg"/></a><figcaption>Состояние <code>error</code></figcaption></figure><hr id="35ce8883-3594-4039-9773-0acf05d1dc74"/><h1 id="916ff842-3192-44af-9243-243674b0a2be" class="">Демонстрация работы</h1><figure id="466a903a-f951-4511-8fb2-60a4a990e50a" style="display: flex; justify-content: center; alignment: top;">
+	<video style="max-width: 370; max-height: 670;" controls>
+		<source src="Task/Demo.mp4" type="video/mp4">
+		<source src="movie.ogg" type="video/ogg">
+		Your browser does not support the video tag.
+	  </video>
+	</figure><p id="120b947e-ce3a-4636-a707-877f6e998312" class="">
+</p></div></article></body></html>
