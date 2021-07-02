@@ -13,6 +13,7 @@
     - описывать элементы интерфейса в коде
 - LaunchScreen - белый экран (стандартный)
 - Шрифт: системный. [link](https://developer.apple.com/documentation/uikit/uifont/1619027-systemfont)
+- Использовать storyboard (кроме LaunchScreen) нельзя
 # Демонстрация работы
 
   <img alt="demo element" src="Task/Demo.gif" width="380" />
