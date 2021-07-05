@@ -16,7 +16,7 @@
 - Использовать storyboard (кроме LaunchScreen) нельзя
 # Демонстрация работы
 
-  <img alt="demo element" src="Task/Demo.gif" width="380" />
+  <img alt="demo element" src="Task/Demo_pres.gif" width="380" />
   
 # Cross-check
 
