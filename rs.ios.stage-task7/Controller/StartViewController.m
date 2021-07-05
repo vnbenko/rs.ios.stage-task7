@@ -39,7 +39,6 @@
     NSString *correctPassword = @"password";
     BOOL isCorrect = ([self.loginTextField.text isEqualToString:correctLogin] && [self.passwordTextField.text isEqualToString:correctPassword]);
     
-    [self hideKeyboard];
     if ([self.loginTextField.text isEqualToString:correctLogin]) {
         [self.loginTextField setState:@"success"];
     } else {
