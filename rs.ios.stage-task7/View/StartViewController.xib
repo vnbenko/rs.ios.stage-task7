@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Semibold.otf">
+            <string>SFProText-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartViewController">
+            <connections>
+                <outlet property="authorizeButton" destination="Ir9-z8-30g" id="HfM-wz-krb"/>
+                <outlet property="firstSecureButton" destination="pF7-Kp-Uxf" id="MfU-40-Vtn"/>
+                <outlet property="loginTextField" destination="xn9-v3-iU3" id="1tQ-1h-1r8"/>
+                <outlet property="passwordTextField" destination="GNm-5E-Any" id="vQu-aa-nOm"/>
+                <outlet property="secondSecureButton" destination="sha-mz-qiM" id="Mtk-z4-QnT"/>
+                <outlet property="secureCodeLabel" destination="jje-Gs-8oz" id="TVX-gT-giR"/>
+                <outlet property="secureView" destination="aQw-XO-4QC" id="9uK-o3-3LT"/>
+                <outlet property="thirdSecureButton" destination="17r-bZ-bGp" id="pbU-63-Tjx"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RSSchool" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksB-E5-r5S" userLabel="RSSchool Label">
+                    <rect key="frame" x="111.5" y="80" width="162.5" height="43"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                    <color key="textColor" name="Black"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xn9-v3-iU3" userLabel="Login TextField" customClass="CustomTextField">
+                    <rect key="frame" x="36" y="240" width="303" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="303" id="FgO-C1-Tfv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="username"/>
+                    <connections>
+                        <action selector="loginEditingDidBegin:" destination="-1" eventType="editingDidBegin" id="XPV-Nv-cdu"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GNm-5E-Any" userLabel="Password TextField" customClass="CustomTextField">
+                    <rect key="frame" x="36" y="304" width="303" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="303" id="FeL-08-HO3"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="303" id="TN4-Cc-NP5"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ir9-z8-30g" userLabel="Authorize Button" customClass="CustomAuthButton">
+                    <rect key="frame" x="109" y="398" width="156" height="42"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="k5u-fD-9Hx"/>
+                        <constraint firstAttribute="width" constant="156" id="wvC-Fg-8qr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                    <state key="normal" title="Authorize" image="person">
+                        <color key="titleColor" name="Little Boy Blue"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" red="0.50196078431372548" green="0.64313725490196072" blue="0.92941176470588238" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="authorizeButtonTapped:" destination="-1" eventType="touchUpInside" id="Vyh-XS-roO"/>
+                    </connections>
+                </button>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aQw-XO-4QC" userLabel="Secure View">
+                    <rect key="frame" x="69.5" y="507" width="236" height="110"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="18" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jje-Gs-8oz" userLabel="Secure Code Label">
+                            <rect key="frame" x="80.5" y="15" width="75" height="21.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="75" id="PgA-dV-S9b"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                            <color key="textColor" name="Black"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uH7-zf-QtK">
+                            <rect key="frame" x="23" y="45" width="190" height="50"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pF7-Kp-Uxf" userLabel="First Secure Button" customClass="CustomSecureButton">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="50" id="DHn-UH-gAB"/>
+                                        <constraint firstAttribute="height" constant="50" id="G3A-AN-a7b"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="24"/>
+                                    <state key="normal" title="1">
+                                        <color key="titleColor" name="Little Boy Blue"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="secureButtonTapped:" destination="-1" eventType="touchUpInside" id="lPj-l7-Ccj"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sha-mz-qiM" userLabel="Second Secure Button" customClass="CustomSecureButton">
+                                    <rect key="frame" x="70" y="0.0" width="50" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="RTa-or-Ham"/>
+                                        <constraint firstAttribute="width" constant="50" id="UNW-uf-y5D"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="24"/>
+                                    <state key="normal" title="2">
+                                        <color key="titleColor" name="Little Boy Blue"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="secureButtonTapped:" destination="-1" eventType="touchUpInside" id="bj3-eH-6O1"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17r-bZ-bGp" userLabel="Third Secure Button" customClass="CustomSecureButton">
+                                    <rect key="frame" x="140" y="0.0" width="50" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="2go-Y5-Ohu"/>
+                                        <constraint firstAttribute="width" constant="50" id="KUb-5X-mU2"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="24"/>
+                                    <state key="normal" title="3">
+                                        <color key="titleColor" name="Little Boy Blue"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="secureButtonTapped:" destination="-1" eventType="touchUpInside" id="d15-0s-Zb3"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="110" id="2CM-PX-8hA"/>
+                        <constraint firstItem="uH7-zf-QtK" firstAttribute="top" secondItem="aQw-XO-4QC" secondAttribute="top" constant="45" id="6JP-qs-7Jb"/>
+                        <constraint firstItem="uH7-zf-QtK" firstAttribute="leading" secondItem="aQw-XO-4QC" secondAttribute="leading" constant="23" id="GdA-HC-ao4"/>
+                        <constraint firstAttribute="bottom" secondItem="uH7-zf-QtK" secondAttribute="bottom" constant="15" id="SSx-VL-8JQ"/>
+                        <constraint firstAttribute="trailing" secondItem="uH7-zf-QtK" secondAttribute="trailing" constant="23" id="VQV-7b-tTc"/>
+                        <constraint firstItem="jje-Gs-8oz" firstAttribute="centerX" secondItem="aQw-XO-4QC" secondAttribute="centerX" id="cMD-Cc-T3o"/>
+                        <constraint firstItem="jje-Gs-8oz" firstAttribute="top" secondItem="aQw-XO-4QC" secondAttribute="top" constant="15" id="vPj-fN-go8"/>
+                        <constraint firstAttribute="width" constant="236" id="zqK-45-uTz"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Ir9-z8-30g" secondAttribute="trailing" constant="110" id="5hU-3A-MTo"/>
+                <constraint firstItem="ksB-E5-r5S" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="80" id="Cqf-bb-sea"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="xn9-v3-iU3" secondAttribute="trailing" constant="36" id="DKV-fF-jRQ"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="GNm-5E-Any" secondAttribute="trailing" constant="36" id="MNP-Ia-iXK"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="aQw-XO-4QC" secondAttribute="bottom" constant="50" id="Mea-ur-xxU"/>
+                <constraint firstItem="aQw-XO-4QC" firstAttribute="top" secondItem="Ir9-z8-30g" secondAttribute="bottom" constant="67" id="Wiz-bi-913"/>
+                <constraint firstItem="GNm-5E-Any" firstAttribute="top" secondItem="xn9-v3-iU3" secondAttribute="bottom" constant="30" id="bm5-QG-7BU"/>
+                <constraint firstItem="Ir9-z8-30g" firstAttribute="top" secondItem="GNm-5E-Any" secondAttribute="bottom" constant="60" id="ihO-yH-uVt"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="ksB-E5-r5S" secondAttribute="trailing" constant="101" id="sMg-U2-2Yl"/>
+                <constraint firstItem="aQw-XO-4QC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xfO-6G-lBJ"/>
+            </constraints>
+            <point key="canvasLocation" x="138.40000000000001" y="128.18590704647679"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="person" width="22.333333969116211" height="22.333333969116211"/>
+        <namedColor name="Black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Little Boy Blue">
+            <color red="0.50196078431372548" green="0.64313725490196083" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
