@@ -30,7 +30,7 @@
 }
 
 - (IBAction)loginEditingDidBegin:(CustomTextField *)sender {
-    [sender setState:@"appear"];
+    [sender setState:@"ready"];
 }
 
 //MARK: - First step of Authorization
@@ -41,13 +41,13 @@
     
     [self hideKeyboard];
     if ([self.loginTextField.text isEqualToString:correctLogin]) {
-        [self.loginTextField setState:@"correct"];
+        [self.loginTextField setState:@"success"];
     } else {
         [self.loginTextField setState:@"error"];
     }
     
     if ([self.passwordTextField.text isEqualToString:correctPassword]) {
-        [self.passwordTextField setState:@"correct"];
+        [self.passwordTextField setState:@"success"];
     } else {
         [self.passwordTextField setState:@"error"];
     }
@@ -157,10 +157,10 @@
     [self.authorizeButton setEnabled:YES];
     [self.authorizeButton setAlpha:1];
     
-    [self.loginTextField setState:@"appear"];
+    [self.loginTextField setState:@"ready"];
     self.loginTextField.text = @"";
     
-    [self.passwordTextField setState:@"appear"];
+    [self.passwordTextField setState:@"ready"];
     self.passwordTextField.text = @"";
     
     self.secureCodeLabel.text = @"_";

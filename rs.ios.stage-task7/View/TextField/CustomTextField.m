@@ -12,7 +12,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self configure];
-    [self setState:@"appear"];
+    [self setState:@"ready"];
 }
 
 - (void)configure {
@@ -25,11 +25,11 @@
     UIColor *correct = [UIColor colorNamed:@"Turquoise Green"];
     UIColor *error = [UIColor colorNamed:@"Venetian Red"];
     
-    if ([state isEqualToString:@"appear"]) {
+    if ([state isEqualToString:@"ready"]) {
         [self setEnabled:YES];
         [self.layer setBorderColor:appear.CGColor];
         [self setAlpha:1];
-    } else if ([state isEqualToString:@"correct"]) {
+    } else if ([state isEqualToString:@"success"]) {
         [self.layer setBorderColor:correct.CGColor];
     } else if ([state isEqualToString:@"error"]) {
         [self.layer setBorderColor:error.CGColor];
